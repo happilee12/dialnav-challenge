@@ -9,301 +9,111 @@
 </head>
 <body>
   <header class="topbar">
-    <a class="brand-logo" href="#home">
-      <span class="brand-mark">DialNav</span>
-      <span class="brand-sub">Challenge 2026</span>
-    </a>
-
+    <div class="brand">
+      <a href="#top">DialNav Challenge</a>
+      <span>The 1st DialNav Challenge — EAD Workshop @ ECCV 2026</span>
+    </div>
     <nav class="nav">
-      <a href="#home" class="active">Home</a>
       <a href="#overview">Overview</a>
-      <a href="#task">Task</a>
-      <a href="#dataset">Dataset</a>
-      <a href="#evaluation">Evaluation</a>
-      <a href="#dates">Dates</a>
-      <a href="#leaderboard">Leaderboard</a>
+      <a href="#features">Features</a>
+      <a href="#guidelines">Guidelines</a>
+      <a href="#phases">Phases</a>
+      <a href="#timeline">Timeline</a>
       <a href="#organizers">Organizers</a>
+      <a href="#citation">Citation</a>
     </nav>
-
-    <a class="top-cta" href="#participate">Participate ↗</a>
   </header>
 
-  <main>
-    <section id="home" class="hero">
-      <div class="hero-bg"></div>
-      <div class="hero-overlay"></div>
-
-      <div class="hero-content">
-        <p class="hero-eyebrow">EAD Workshop · ECCV 2026</p>
-        <h1>The 1st <span>DialNav</span><br />Challenge</h1>
-        <p class="hero-lead">Interactive instruction following with high-level path ambiguity.</p>
-        <p class="hero-sub">Agents that ask, listen, and navigate — guided by natural-language dialog under uncertainty.</p>
-
-        <div class="event-meta">
-          <div class="meta-item">
-            <div class="meta-icon">▣</div>
-            <div>
-              <p>Submission</p>
-              <strong>TBD</strong>
-            </div>
-          </div>
-          <div class="meta-item">
-            <div class="meta-icon">⌖</div>
-            <div>
-              <p>Workshop</p>
-              <strong>ECCV 2026</strong>
-            </div>
-          </div>
-          <div class="meta-item">
-            <div class="meta-icon">◇</div>
-            <div>
-              <p>Prize</p>
-              <strong>TBD</strong>
-            </div>
-          </div>
-        </div>
-
-        <div class="hero-actions">
-          <a class="btn primary" href="#participate">Participate ↗</a>
-          <a class="btn dark" href="#task">Read the Task ↗</a>
-          <a class="btn dark" href="https://your-dialnav-challenge-site.github.io/" target="_blank" rel="noopener noreferrer">EAD Workshop ↗</a>
-        </div>
-      </div>
-    </section>
-
+  <main id="top">
     <section id="overview" class="section">
-      <div class="section-title">
-        <span class="section-icon">▱</span>
-        <h2>Overview</h2>
-      </div>
-
-      <div class="about-lead">
-        <p>
-          The <strong>DialNav Challenge</strong> is hosted at the
-          <a href="../01_main_website/index.html">Embodied Agent and Dialog (EAD) Workshop</a>
-          at ECCV 2026. The challenge benchmarks embodied agents that follow
-          high-level natural-language instructions in indoor environments.
-          Because the instructions are intentionally ambiguous, successful agents
-          must <em>proactively engage in dialog</em>, ask clarifying questions,
-          and disambiguate the intended path before — and while — acting.
-        </p>
-      </div>
-
-      <div class="theme-grid">
-        <article class="theme-card">
-          <div class="theme-icon purple">💬</div>
-          <h3>Proactive Dialog</h3>
-          <p>Detect uncertainty and request clarification through natural conversation.</p>
-        </article>
-        <article class="theme-card">
-          <div class="theme-icon blue">🧭</div>
-          <h3>Navigation Under Ambiguity</h3>
-          <p>Map vague high-level directions to concrete paths in unseen scenes.</p>
-        </article>
-        <article class="theme-card">
-          <div class="theme-icon teal">🔄</div>
-          <h3>Multi-turn Reasoning</h3>
-          <p>Maintain dialog state and update beliefs as new information arrives.</p>
-        </article>
-        <article class="theme-card">
-          <div class="theme-icon orange">📊</div>
-          <h3>Dialog-Aware Metrics</h3>
-          <p>Evaluation that balances task success, navigation efficiency, and question quality.</p>
-        </article>
-      </div>
+      <h1>The 1st DialNav Challenge</h1>
+      <p class="lead">
+        Hosted at the
+        <a href="../01_main_website/index.html">Embodied Agent and Dialog (EAD) Workshop</a>,
+        ECCV 2026.
+      </p>
+      <h2>Overview</h2>
+      <p>
+        The DialNav Challenge benchmarks embodied agents that follow high-level,
+        intentionally ambiguous natural-language instructions in indoor environments.
+        Successful agents must combine vision-and-language navigation with
+        proactive dialog: detecting uncertainty, asking clarifying questions, and
+        updating their beliefs as the conversation progresses.
+      </p>
+      <p>
+        The challenge contributes a benchmark, a starter kit, and an evaluation
+        server. Top-performing teams will be invited to present at the EAD
+        Workshop at ECCV 2026.
+      </p>
     </section>
 
-    <section id="task" class="section compact">
-      <div class="section-title">
-        <span class="section-icon">⌘</span>
-        <h2>Task Description</h2>
-      </div>
-      <div class="split-card">
-        <div>
-          <h3>What the agent must do</h3>
-          <p>
-            An agent receives a high-level instruction (e.g., <em>"Go to the room
-            where someone is reading"</em>) inside a photorealistic indoor scene.
-            The instruction is deliberately under-specified. The agent must
-            navigate to the correct goal location while being able to ask the
-            human guide for clarification through dialog. Successful runs
-            balance progress with concise, well-timed questions.
-          </p>
-        </div>
-        <a class="btn primary" href="#participate">Get Started ↗</a>
-      </div>
+    <section id="features" class="section">
+      <h2>Features</h2>
+      <ul>
+        <li>Photorealistic indoor scenes (TBD simulator).</li>
+        <li>High-level, ambiguous instructions requiring dialog to resolve.</li>
+        <li>Human-annotated reference dialogs with clarifying questions.</li>
+        <li>Train / Val-Seen / Val-Unseen / Test-Unseen splits.</li>
+        <li>Action space combining navigation and ask-question actions.</li>
+        <li>Dialog-aware metrics: Success Rate, SPL, question count, dialog quality.</li>
+      </ul>
     </section>
 
-    <section id="dataset" class="section compact">
-      <div class="section-title">
-        <span class="section-icon">☷</span>
-        <h2>Dataset & Simulator</h2>
-      </div>
-      <div class="program-table">
-        <div><strong>Scenes</strong><span>Photorealistic indoor environments (TBD)</span></div>
-        <div><strong>Episodes</strong><span>Train / Val Seen / Val Unseen / Test Unseen splits</span></div>
-        <div><strong>Dialog</strong><span>Human–human reference dialogs with annotated clarifications</span></div>
-        <div><strong>Simulator</strong><span>Habitat-compatible (TBD)</span></div>
-        <div><strong>Sensors</strong><span>RGB-D, pose, panoramic views</span></div>
-        <div><strong>Action Space</strong><span>Discrete navigation + ask-question actions</span></div>
-      </div>
+    <section id="guidelines" class="section">
+      <h2>Guidelines</h2>
+      <ol>
+        <li>Register a team on <a href="https://eval.ai/" target="_blank" rel="noopener noreferrer">EvalAI</a> (link will be provided at launch).</li>
+        <li>Download the starter code, dataset, and simulator from the challenge GitHub repository.</li>
+        <li>Train your agent and produce predictions on the validation and test splits.</li>
+        <li>Submit predictions through EvalAI before the deadline. A short technical report is required for the leaderboard.</li>
+      </ol>
     </section>
 
-    <section id="evaluation" class="section compact">
-      <div class="section-title">
-        <span class="section-icon">✎</span>
-        <h2>Evaluation</h2>
-      </div>
-      <div class="challenge-grid">
-        <article class="challenge-card">
-          <h3>Success Rate (SR)</h3>
-          <p>Fraction of episodes in which the agent stops within the goal threshold.</p>
-        </article>
-        <article class="challenge-card">
-          <h3>SPL</h3>
-          <p>Success weighted by Path Length — efficiency-aware navigation success.</p>
-        </article>
-        <article class="challenge-card">
-          <h3>Question Efficiency</h3>
-          <p>Number and informativeness of clarifying questions issued by the agent.</p>
-        </article>
-        <article class="challenge-card">
-          <h3>Dialog Quality</h3>
-          <p>Human / model-based scoring of question relevance and grounding.</p>
-        </article>
-      </div>
+    <section id="phases" class="section">
+      <h2>Phases</h2>
+      <p><strong>Dev phase.</strong> Submissions are evaluated on the Val-Unseen split. Unlimited submissions; leaderboard is public.</p>
+      <p><strong>Test phase.</strong> Submissions are evaluated on the Test-Unseen split. Limited number of submissions per team; final leaderboard determines the winners.</p>
+      <p><strong>Reserve phase.</strong> A held-out subset is used to verify reproducibility for top-ranked teams.</p>
     </section>
 
-    <section id="dates" class="section dates-section">
-      <div class="section-title-row">
-        <div class="section-title">
-          <span class="section-icon">◔</span>
-          <h2>Important Dates</h2>
-        </div>
-      </div>
-
-      <div class="timeline-line"></div>
-      <div class="date-grid">
-        <article class="date-card">
-          <h3>Challenge<br />Launch</h3>
-          <strong>TBD</strong>
-        </article>
-        <article class="date-card">
-          <h3>Dev Phase<br />Opens</h3>
-          <strong>TBD</strong>
-        </article>
-        <article class="date-card">
-          <h3>Test Phase<br />Opens</h3>
-          <strong>TBD</strong>
-        </article>
-        <article class="date-card">
-          <h3>Submission<br />Deadline</h3>
-          <strong>TBD</strong>
-        </article>
-        <article class="date-card">
-          <h3>Result<br />Release</h3>
-          <strong>TBD</strong>
-        </article>
-        <article class="date-card">
-          <h3>Workshop<br />Presentations</h3>
-          <strong>TBD</strong>
-        </article>
-      </div>
-    </section>
-
-    <section id="participate" class="section compact">
-      <div class="section-title">
-        <span class="section-icon">✸</span>
-        <h2>Participate</h2>
-      </div>
-      <div class="split-card">
-        <div>
-          <h3>How to join the DialNav Challenge</h3>
-          <p>
-            Register on EvalAI, download the starter code and dataset, train your
-            agent, and submit predictions. Top teams will be invited to present
-            at the EAD Workshop at ECCV 2026 and to contribute to the workshop
-            report.
-          </p>
-        </div>
-        <a class="btn primary" href="https://eval.ai/" target="_blank" rel="noopener noreferrer">EvalAI Submission ↗</a>
-      </div>
-    </section>
-
-    <section id="leaderboard" class="section compact">
-      <div class="section-title">
-        <span class="section-icon">▣</span>
-        <h2>Leaderboard</h2>
-      </div>
-      <div class="program-table leaderboard-table">
-        <div><strong>Rank</strong><span>Team — Method — SR / SPL / Question Eff.</span></div>
-        <div><strong>—</strong><span>Leaderboard opens with the test phase</span></div>
-      </div>
+    <section id="timeline" class="section">
+      <h2>Timeline</h2>
+      <ul class="timeline">
+        <li><strong>TBD</strong> — Challenge launch and dev phase opens</li>
+        <li><strong>TBD</strong> — Test phase opens</li>
+        <li><strong>TBD</strong> — Submission deadline</li>
+        <li><strong>TBD</strong> — Results released, winners notified</li>
+        <li><strong>TBD</strong> — Workshop presentations at ECCV 2026</li>
+      </ul>
     </section>
 
     <section id="organizers" class="section">
-      <div class="section-title-row">
-        <div class="section-title">
-          <span class="section-icon">☻</span>
-          <h2>Organizers</h2>
-        </div>
-      </div>
-
-      <div class="organizer-row">
-        <article class="mini-person"><div class="mini-photo"></div><h3>Paul Hongsuck Seo</h3><p>Korea University</p><span>Associate Professor.</span></article>
-        <article class="mini-person"><div class="mini-photo"></div><h3>Leekyeung Han</h3><p>Korea University</p><span>Ph.D. Candidate.</span></article>
-        <article class="mini-person"><div class="mini-photo"></div><h3>Hyunji Min</h3><p>Korea University</p><span>Ph.D. Candidate.</span></article>
-        <article class="mini-person"><div class="mini-photo"></div><h3>Jinseong Jeong</h3><p>Korea University</p><span>M.S. Student.</span></article>
-      </div>
+      <h2>Organizers</h2>
+      <ul class="people">
+        <li>Paul Hongsuck Seo — Korea University</li>
+        <li>Leekyeung Han — Korea University</li>
+        <li>Hyunji Min — Korea University</li>
+        <li>Jinseong Jeong — Korea University</li>
+      </ul>
+      <p class="contact">
+        Contact: <a href="mailto:happilee12@korea.ac.kr">happilee12@korea.ac.kr</a>
+      </p>
     </section>
 
-    <section id="contact" class="section compact">
-      <div class="section-title">
-        <span class="section-icon">✉</span>
-        <h2>Contact</h2>
-      </div>
-      <div class="split-card">
-        <div>
-          <h3>Questions about the challenge?</h3>
-          <p>
-            For technical questions, please open an issue on the challenge GitHub
-            repository. For general inquiries, reach out to the organizers by
-            email.
-          </p>
-        </div>
-        <a class="btn primary" href="mailto:happilee12@korea.ac.kr">happilee12@korea.ac.kr ↗</a>
-      </div>
+    <section id="citation" class="section">
+      <h2>Citation</h2>
+      <p>If you use the DialNav benchmark or challenge data, please cite:</p>
+      <pre><code>@inproceedings{dialnav2026,
+  title     = {DialNav: Interactive Instruction Following with High-level Path Ambiguity},
+  author    = {TBD},
+  booktitle = {ECCV Workshops},
+  year      = {2026}
+}</code></pre>
     </section>
   </main>
 
   <footer class="footer">
-    <div>
-      <h2><span>DialNav</span> 2026</h2>
-      <p>The 1st DialNav Challenge<br />at the EAD Workshop, ECCV 2026</p>
-    </div>
-
-    <div>
-      <h3>Quick Links</h3>
-      <a href="#overview">Overview</a>
-      <a href="#task">Task</a>
-      <a href="#dataset">Dataset</a>
-      <a href="#evaluation">Evaluation</a>
-    </div>
-
-    <div>
-      <h3>Resources</h3>
-      <a href="#dates">Important Dates</a>
-      <a href="#leaderboard">Leaderboard</a>
-      <a href="../01_main_website/index.html">EAD Workshop</a>
-    </div>
-
-    <div>
-      <h3>Contact</h3>
-      <a href="mailto:phseo@korea.ac.kr">✉ phseo@korea.ac.kr</a>
-      <a href="mailto:happilee12@korea.ac.kr">✉ happilee12@korea.ac.kr</a>
-    </div>
-
-    <p class="copyright">© 2026 DialNav Challenge · EAD Workshop @ ECCV 2026.</p>
+    <p>© 2026 DialNav Challenge · EAD Workshop @ ECCV 2026.</p>
   </footer>
 </body>
 </html>
