@@ -126,10 +126,47 @@ li {
 .people {
   list-style: none;
   padding-left: 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 22px 18px;
+  margin-top: 8px;
 }
 
 .people li {
-  padding: 4px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+}
+
+.people img {
+  width: 96px;
+  height: 96px;
+  border-radius: 999px;
+  object-fit: cover;
+  background: #eee;
+  margin-bottom: 10px;
+}
+
+.people strong {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.people span {
+  display: block;
+  margin-top: 2px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+@media (max-width: 640px) {
+  .people {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 .contact {
