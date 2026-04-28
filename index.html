@@ -15,9 +15,12 @@
     </div>
     <nav class="nav">
       <a href="#overview">Overview</a>
-      <a href="#features">Features</a>
-      <a href="#guidelines">Guidelines</a>
-      <a href="#phases">Phases</a>
+      <a href="#task">Task</a>
+      <a href="#provided">Provided</a>
+      <a href="#rules">Rules</a>
+      <a href="#submission">Submission</a>
+      <a href="#evaluation">Evaluation</a>
+      <a href="#leaderboard">Leaderboard</a>
       <a href="#timeline">Timeline</a>
       <a href="#organizers">Organizers</a>
       <a href="#citation">Citation</a>
@@ -47,33 +50,88 @@
       </p>
     </section>
 
-    <section id="features" class="section">
-      <h2>Features</h2>
+    <section id="task" class="section">
+      <h2>Task</h2>
+      <p>
+        DialNav couples a <strong>Navigator</strong> (the embodied agent that
+        moves through the scene) with a <strong>Guide</strong> (the dialog
+        partner that holds the goal information). Both interact via natural
+        language. Participants may modify <strong>the Navigator, the Guide, or
+        both</strong>, and submit the resulting system for evaluation.
+      </p>
+    </section>
+
+    <section id="provided" class="section">
+      <h2>What We Provide</h2>
       <ul>
-        <li>Photorealistic indoor scenes (TBD simulator).</li>
-        <li>High-level, ambiguous instructions requiring dialog to resolve.</li>
-        <li>Human-annotated reference dialogs with clarifying questions.</li>
-        <li>Train / Val-Seen / Val-Unseen / Test-Unseen splits.</li>
-        <li>Action space combining navigation and ask-question actions.</li>
-        <li>Dialog-aware metrics: Success Rate, SPL, question count, dialog quality.</li>
+        <li><strong>RAIN dataset</strong> — episodes, instructions, and reference dialogs.</li>
+        <li><strong>Starter code</strong> — data loaders, evaluation scripts, submission tooling.</li>
+        <li><strong>Navigator and Guide reference implementations.</strong></li>
+        <li><strong>Pretrained weights</strong> for the baseline Navigator and Guide.</li>
+        <li><strong>Baseline Docker image</strong> reproducing the reference setup.</li>
+        <li><strong>Sample episodes</strong> with open Navigator and Guide trajectories.</li>
       </ul>
     </section>
 
-    <section id="guidelines" class="section">
-      <h2>Guidelines</h2>
-      <ol>
-        <li>Register a team on <a href="https://eval.ai/" target="_blank" rel="noopener noreferrer">EvalAI</a> (link will be provided at launch).</li>
-        <li>Download the starter code, dataset, and simulator from the challenge GitHub repository.</li>
-        <li>Train your agent and produce predictions on the validation and test splits.</li>
-        <li>Submit predictions through EvalAI before the deadline. A short technical report is required for the leaderboard.</li>
-      </ol>
+    <section id="rules" class="section">
+      <h2>Rules &amp; Constraints</h2>
+      <h3>Hardware</h3>
+      <ul>
+        <li>1 × NVIDIA A100 40GB <em>or</em> 4 × RTX 3090 (or equivalent).</li>
+        <li>Up to 16 GB CPU RAM.</li>
+      </ul>
+      <h3>Per-episode limits</h3>
+      <ul>
+        <li>Maximum runtime: <strong>5 minutes</strong> per episode.</li>
+        <li>Maximum steps: <strong>50</strong> per episode.</li>
+      </ul>
+      <p class="note">
+        Submissions exceeding any of the above limits will be marked as failed
+        for the affected episodes.
+      </p>
     </section>
 
-    <section id="phases" class="section">
-      <h2>Phases</h2>
-      <p><strong>Dev phase.</strong> Submissions are evaluated on the Val-Unseen split. Unlimited submissions; leaderboard is public.</p>
-      <p><strong>Test phase.</strong> Submissions are evaluated on the Test-Unseen split. Limited number of submissions per team; final leaderboard determines the winners.</p>
-      <p><strong>Reserve phase.</strong> A held-out subset is used to verify reproducibility for top-ranked teams.</p>
+    <section id="submission" class="section">
+      <h2>Submission</h2>
+      <p>Each submission must include:</p>
+      <ul>
+        <li>Model code (Navigator and/or Guide).</li>
+        <li>Model weights required to reproduce the run.</li>
+        <li>Execution logs on the validation set.</li>
+        <li>A short <strong>technical report</strong> describing the method.</li>
+      </ul>
+      <p>
+        Submissions are made through the challenge submission portal (link will
+        be provided at launch). A reproducible Docker image is recommended.
+      </p>
+    </section>
+
+    <section id="evaluation" class="section">
+      <h2>Evaluation Metrics</h2>
+      <ul>
+        <li><strong>SR</strong> — Success Rate.</li>
+        <li><strong>SPL</strong> — Success weighted by Path Length.</li>
+        <li><strong>NE</strong> — Navigation Error (final distance to the goal).</li>
+        <li><strong>Dialog Turns</strong> — number of dialog turns per episode.</li>
+      </ul>
+    </section>
+
+    <section id="leaderboard" class="section">
+      <h2>Leaderboard</h2>
+      <p>
+        The leaderboard is operated on the <strong>validation set</strong>,
+        based on <strong>execution log files</strong> uploaded by participants.
+        All submitted log files are made <strong>publicly available</strong> for
+        transparency and reproducibility.
+      </p>
+      <p>
+        Because validation ground truth is public, log-file ranking alone is
+        susceptible to manipulation. To address this, the organizers
+        <strong>re-evaluate the submitted code on a held-out portion of the
+        test set</strong> for the final ranking. Teams targeted for the final
+        leaderboard must therefore submit reproducible code in addition to
+        their logs.
+      </p>
     </section>
 
     <section id="timeline" class="section">
