@@ -127,14 +127,10 @@
     <section id="participation" class="section">
       <h2>How to Participate</h2>
       <ol>
-        <li>Register your team through the <a href="https://forms.gle/X17XHquqQHxefJKB6" target="_blank" rel="noopener noreferrer">Google Form link</a>.</li>
         <li>Build your own agents based on the DialNav baseline code and <a href="https://github.com/happilee12/RAINbow" target="_blank" rel="noopener noreferrer">GitHub repository</a>.</li>
         <li>Upload the required log files to the <a href="https://huggingface.co/spaces/lee1o21k21/DialNav-Challenge" target="_blank" rel="noopener noreferrer">Leaderboard</a>.</li>
         <li><strong>Top performing teams</strong> will be asked to submit a <strong>reproducible GitHub repository</strong> and a <strong>technical report</strong>.</li>
       </ol>
-      <p class="note">
-        <strong>Final winners</strong> are expected to present at the workshop. If a winning team cannot present, the award may be revoked.
-      </p>
     </section>
 
     <section id="datasets" class="section">
@@ -162,14 +158,15 @@
       <h2>Rules &amp; Policy</h2>
       <ul>
         <li>Participants may modify the <strong>Navigator</strong>, the <strong>Guide</strong>, or both.</li>
-        <li><strong>External datasets</strong>, pretrained models, and commercial APIs are allowed and must be clearly described in the technical report.</li>
-        <li><strong>Manual annotation</strong> of the evaluation set is not allowed.</li>
+        <li>Communication between the <strong>Navigator</strong> and <strong>Guide</strong> must use <strong>natural language only</strong>; other modalities, including images, are not allowed.</li>
+       <li><strong>Manual annotation</strong> of the evaluation set is not allowed.</li>
         <li>Using <strong>val-seen</strong>, <strong>val-unseen</strong>, or <strong>test</strong> data to directly train or adapt the evaluation environment is not allowed.</li>
-        <li>Runs must include the <strong>seeds</strong> and other execution details needed to reproduce the reported results. If a submission cannot be reproduced or the scoring cannot be reconstructed, it may be marked invalid.</li>
-          <li><strong>Navigation</strong> is restricted to <strong>50 steps</strong>.</li>
-          <li><strong>Dialog turns</strong> are not limited.</li>
-          <li>The <strong>Navigator</strong> cannot re-guess once the episode ends, whether or not the target is reached.</li>
-      </ul>
+        <li>Because this challenge uses a <strong>Guide Agent</strong> setup, the ground-truth target location is disclosed for the <strong>test dataset</strong>. However, this disclosure is provided only for the challenge protocol and evaluation setup, and <strong>parameter tuning on the test dataset is not allowed</strong>.</li>
+        <li><strong>Dialog and navigation turns</strong> are not limited.</li>
+        <li>The <strong>Navigator</strong> cannot re-guess once the episode ends, whether or not the target is reached.</li>
+        <li><strong>External datasets</strong>, pretrained models, and commercial APIs are allowed and must be clearly described in the technical report.</li>
+        <li>Technical report must include the <strong>seeds</strong> and other execution details needed to reproduce the reported results. If a submission cannot be reproduced or the scoring cannot be reconstructed, it may be marked invalid.</li>
+       </ul>
       <!-- <div class="callout">
         Reproducibility matters: if the leaderboard score cannot be re-implemented from the submitted artifacts, the submission is not considered valid.
       </div> -->
@@ -246,7 +243,7 @@
       </div>
     </section>
 
-    <section id="license" class="section">
+    <!-- <section id="license" class="section">
       <h2>License</h2>
       <p>
         Unless otherwise noted, the DialNav Challenge dataset and annotations are released for non-commercial research and educational use. Any third-party assets or environments remain subject to their original licenses.
@@ -254,6 +251,17 @@
       <p>
         The baseline code will be released under an open-source software license.
       </p>
+    </section> -->
+
+    <section id="subscribe" class="section">
+      <h2>Stay Updated</h2>
+      <p>
+        Subscribe for challenge updates and announcements:
+      </p>
+      <div class="tally-embed">
+        <iframe data-tally-src="https://tally.so/embed/81rQbz?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" loading="lazy" width="100%" height="177" frameborder="0" marginheight="0" marginwidth="0" title="Subscribe DialNav Challenge Updates"></iframe>
+      </div>
+      <script>var d=document,w="https://tally.so/widgets/embed.js",v=function(){"undefined"!=typeof Tally?Tally.loadEmbeds():d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function(e){e.src=e.dataset.tallySrc}))};if("undefined"!=typeof Tally)v();else if(d.querySelector('script[src="'+w+'"]')==null){var s=d.createElement("script");s.src=w,s.onload=v,s.onerror=v,d.body.appendChild(s);}</script>
     </section>
   </main>
 
