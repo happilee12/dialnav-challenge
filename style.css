@@ -35,6 +35,34 @@ a:hover {
   text-decoration: underline;
 }
 
+.prize-ribbon {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: center;
+  gap: 10px;
+  padding: 12px 20px;
+  background: var(--link);
+  color: #fff;
+  text-align: center;
+  line-height: 1.4;
+}
+
+.prize-ribbon strong {
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: -0.005em;
+}
+
+.prize-ribbon-icon {
+  font-size: 16px;
+}
+
+.prize-ribbon-note {
+  font-size: 14px;
+  color: rgba(255, 255, 255, .82);
+}
+
 .topbar {
   border-bottom: 1px solid var(--line);
   padding: 22px 28px;
