@@ -7,6 +7,41 @@
   --link: #1a4fc4;
   --code-bg: #f6f6f6;
   --max: 840px;
+  --alert: #b42318;
+  --alert-line: #f0c2bd;
+  --alert-bg: #fdf3f2;
+}
+
+/* Announcement banner: the schedule change has to be seen before anything else. */
+.important-note {
+  margin-top: 20px;
+  padding: 20px 22px;
+  border: 1px solid var(--alert-line);
+  border-left: 4px solid var(--alert);
+  background: var(--alert-bg);
+}
+
+.important-note h2 {
+  margin-top: 0;
+  color: var(--alert);
+}
+
+.important-note h3 {
+  margin-bottom: 6px;
+}
+
+.important-note .important-lede {
+  font-size: 17px;
+}
+
+.important-note .callout {
+  background: #fff;
+  border-color: var(--alert-line);
+}
+
+.nav a.nav-alert {
+  color: var(--alert);
+  font-weight: 600;
 }
 
 * {

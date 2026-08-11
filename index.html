@@ -31,6 +31,7 @@
       <span>EAD Workshop @ ECCV 2026</span>
     </div>
     <nav class="nav">
+      <a href="#important-note" class="nav-alert">Important Note</a>
       <a href="#overview">Overview</a>
       <a href="#task">Task</a>
       <a href="#participation">Participation</a>
@@ -43,7 +44,53 @@
     </nav>
   </header>
 
-  <main id="top">
+  <main id="top" style="padding: 20px;">
+    <section id="important-note" class="section important-note" style="padding: 20px;">
+      <h2>⚠️ Important Note!!</h2>
+      <p class="important-lede">
+        <strong>The test set has been newly released, and every participant must submit again.</strong>
+      </p>
+      <h3>1. The test set is released - please submit again</h3>
+      <p>
+        We found that the test set had not actually been released to participants. It is now available here:
+        <a href="https://drive.google.com/file/d/13GsIPcRP8sVW82PAJFSF3hDKKKzn2Nvo/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Test set download</a>.
+      </p>
+      <p>
+        Please run your method on the newly released test set and include the resulting <code>test</code> split in a new submission to the
+        <a href="https://huggingface.co/spaces/lee1o21k21/DialNav-Challenge" target="_blank" rel="noopener noreferrer">evaluation server</a>.
+      </p>
+      <div class="callout">
+        <strong>Note:</strong> the released test set does <strong>not</strong> include the human-annotated dialog and navigation trajectory.
+        Those annotations are what the score is computed from, and the organizers will calculate the final score offline using them.
+      </div>
+
+      <h3>2. How the winner is decided</h3>
+      <p>
+        The final winner is decided on the <strong>test split only</strong> - val_seen and val_unseen are not taken into account.
+      </p>
+      <p>
+        The leaderboard shows the test success rate and the other reference metrics, but <strong>not the test split score</strong>.
+        After the challenge period ends, we will contact the top submissions based on that score.
+      </p>
+      <p>
+        Because the score is hidden, <strong>please check that your SR Test on the leaderboard reflects your own method</strong>.
+      </p>
+
+      <h3>3. Revised schedule</h3>
+      <p>
+        We know that re-running your method is extra work at short notice, and we sincerely apologize for the inconvenience.
+        We have adjusted the schedule accordingly:
+      </p>
+      <ul class="timeline">
+        <li><strong>Aug 15 (AoE)</strong> - <strong>Submission deadline</strong> - final submission on the new test set</li>
+        <li><strong>Aug 16 (AoE)</strong> - <strong>Prize candidates contacted</strong> - the top teams will be asked for a short free-form report and their original source code.</li>
+        <li><strong>Aug 18</strong> - <strong>Final results announced</strong></li>
+      </ul>
+      <p>
+        The prize pot has grown, so awards will likely go beyond first place alone. We encourage everyone to take part.
+      </p>
+    </section>
+
     <section id="overview" class="hero section">
       <div class="hero-copy">
         <p class="eyebrow">Workshop Challenge</p>
@@ -80,20 +127,20 @@
       <aside class="hero-panel">
         <div class="stat-grid">
           <div class="stat">
-            <span class="stat-label">Challenge period</span>
-            <strong>Jun 3 - Aug 12</strong>
+            <span class="stat-label">Submission due</span>
+            <strong>Aug 15 (AoE)</strong>
           </div>
           <div class="stat">
-            <span class="stat-label">Code report due</span>
-            <strong>Aug 15</strong>
+            <span class="stat-label">Prize candidates contacted</span>
+            <strong>Aug 16 (AoE)</strong>
           </div>
           <div class="stat">
-            <span class="stat-label">Notification</span>
-            <strong>Aug 22</strong>
+            <span class="stat-label">Final results</span>
+            <strong>Aug 18</strong>
           </div>
           <div class="stat">
-            <span class="stat-label">Final presentation</span>
-            <strong>TBA</strong>
+            <span class="stat-label">Winner presentation</span>
+            <strong>Sep 9</strong>
           </div>
         </div>
         <!-- <div class="hero-note">
@@ -189,11 +236,16 @@
     <section id="dates" class="section">
       <h2>Dates</h2>
       <ul class="timeline">
-        <li><strong>Jun 3 - Aug 12</strong> - <strong>Challenge period</strong></li>
-        <li><strong>Aug 15</strong> - <strong>Code and technical report submission deadline</strong></li>
-        <li><strong>Aug 22</strong> - <strong>Notification</strong></li>
-        <li><strong>TBA</strong> - <strong>Workshop presentation</strong></li>
+        <li><strong>Jun 3 - Aug 15</strong> - <strong>Challenge period</strong></li>
+        <li><strong>Aug 15 (AoE)</strong> - <strong>Submission deadline</strong> - final submission on the newly released test set</li>
+        <li><strong>Aug 16 (AoE)</strong> - <strong>Prize candidates contacted</strong> - top 3 teams asked for a short free-form report and their original source code</li>
+        <li><strong>Aug 18</strong> - <strong>Final results announced</strong></li>
+        <li><strong>Sep 9</strong> - <strong>Winner presentation @ EAD Workshop</strong></li>
       </ul>
+      <div class="callout">
+        Schedule revised on Aug 11 following the test set release - see the
+        <a href="#important-note">Important Note</a> at the top of this page.
+      </div>
     </section>
 
     <section id="organizers" class="section">
